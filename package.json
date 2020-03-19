@@ -4,10 +4,10 @@
   "description": "Resolución de ejercicios de prueba BED",
   "main": "index.js",
   "directories": {
-    "test": "nodemon test.js"
+    "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nodemon test/test.js"
   },
   "repository": {
     "type": "git",
