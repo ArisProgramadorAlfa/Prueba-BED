@@ -1,0 +1,25 @@
+{
+  "name": "prueba-bed",
+  "version": "1.0.0",
+  "description": "Resolución de ejercicios de prueba BED",
+  "main": "index.js",
+  "directories": {
+    "test": "nodemon test.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArisProgramadorAlfa/Prueba-BED.git"
+  },
+  "author": "Aris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArisProgramadorAlfa/Prueba-BED/issues"
+  },
+  "homepage": "https://github.com/ArisProgramadorAlfa/Prueba-BED#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
