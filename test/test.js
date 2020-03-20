@@ -2,6 +2,7 @@ const getSubArray = require('./../ejercicio-1/ejercicio1');
 const sumaEnSerie = require('./../ejercicio-2/ejercicio2');
 const getHigherNumber = require('./../ejercicio-3/ejercicio3');
 const clearArray = require('./../ejercicio-4/ejercicio4');
+const checkString = require('./../ejercicio-5/ejercicio5');
 
 
 // Ejercicio 1
@@ -34,10 +35,25 @@ const clearArray = require('./../ejercicio-4/ejercicio4');
 // }
 
 // Ejercicio 4
-
 // const array = [1, 2, 3, 1, 2, 3, 4];
 // const newArray = clearArray(array);
 // console.log(newArray);
+
+// Ejercicio 5
+// const str = "([]())";
+// const completeOk = checkString.stringCheckingComplete(str);
+// const simpleOk = checkString.stringCheckingSimple(str);
+// console.log(`Comprobación simple: ${simpleOk}`);
+// console.log(`Comprobación completa: ${completeOk}`);
+
+
+
+
+
+
+
+
+
 
 
 
