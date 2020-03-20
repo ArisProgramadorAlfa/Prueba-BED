@@ -19,3 +19,35 @@ acomodarlas en el menor número de salones sin que se traslapan, una clase de 11
 14:00 no puede estar en el mismo salón que una de 12:00 a 15:00. Escribe una función
 que encuentre ese número de salones, por ejemplo si tienes clases de 11:00 a 14:00,
 12:00 a 15:00 y 14:30 a 16:00 el menor número de salones es 2.
+
+
+## Resolución general
+- En general los ejercicios estuvieron interesantes de resolver, ya que el principio parecian faciles
+pero al momento de irlos desarrollando, se me fueron ocurriendo otras formas de solucionarlos,
+es por eso que en algunos los optimice despues de haberlos resuelto y en un punto hacer funciones 
+genéricas para que las usaran mas de un ejercicio.
+- Algo interesante fue poder usar Mocha para hacer pruebas unitarias, esta parte me gusto por que 
+es una manera mas automatizada de hacer pruebas en las funciones que se desarrollaron, incluso 
+se me ocurrio una manera de simplificar el código para hacer las pruebas mediante una variable 
+con los datos de los test de algunos ejercicios, esto también lo implemente  y funciono bien.
+- Estuvo entretenido y divertodo resolver los ejercicios.
+
+
+## Prueba
+
+### Instalación de dependencias
+ - Antes de poder hacer pruebas es necesaro instalar las dependencias de node para poder 
+ ejecutar las pruebas unitarias, para esto se debe situar en el directorio raíz del 
+ repositorio y ejecutar el siguiente comando:
+ ````
+ npm i
+ ```
+ - Una vez hecho esto, solo hay que ejecutar el siguiente comando para ejecutar las pruebas 
+ con Mocha y ver los resultados que arroja:
+ ```
+ npm test
+ ```
+
+ - Aún se pueden modificar las pruebas unitarias modificando la data de para los test en el
+ archivo /test/data.js e incluso hacer unas cuantas optimizaciones, que por el tiempo ya 
+ no las pude realizar.
