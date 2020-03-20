@@ -39,7 +39,7 @@ con los datos de los test de algunos ejercicios, esto también lo implemente  y 
  - Antes de poder hacer pruebas es necesaro instalar las dependencias de node para poder 
  ejecutar las pruebas unitarias, para esto se debe situar en el directorio raíz del 
  repositorio y ejecutar el siguiente comando:
- ````
+ ```
  npm i
  ```
  - Una vez hecho esto, solo hay que ejecutar el siguiente comando para ejecutar las pruebas 
