@@ -2,26 +2,29 @@
 const now = new Date();
 
 const findClassRoom = classroomTiming => {
-    const classRomms = [];    
-    for (const timing of classroomTiming) {
-        const startTimeInNumber = getTimeInNumer(timing.start);
-        const endTimeInNumber = getTimeInNumer(timing.end);
-        const timingInNumber = {start: startTimeInNumber, end: endTimeInNumber};  
-        if(classRomms.length === 0){
-            classRomms.push([timingInNumber]);              
-        } else {
-            const classRoomAvailable = searchAvailableTiming(classRomms, timingInNumber);           
-            if(classRoomAvailable.available){
-                classRomms[classRoomAvailable.indexClassRom].push(timingInNumber);                
+    try{
+        const classRomms = [];    
+        for (const timing of classroomTiming) {        
+            const timingInNumber = getTimmingInNumber(timing)
+            if(classRomms.length === 0){
+                classRomms.push([timingInNumber]);              
             } else {
-                classRomms.push([timingInNumber])
-            }
-        } 
-    }    
-    return classRomms;
+                const classRoomAvailable = searchAvailableTiming(classRomms, timingInNumber);           
+                if(classRoomAvailable.available){
+                    classRomms[classRoomAvailable.indexClassRom].push(timingInNumber);                
+                } else {
+                    classRomms.push([timingInNumber])
+                }
+            } 
+        }    
+        return classRomms.length;
+    }catch (e){
+        return false;
+    }
+    
 };
 
-const checkTime = (timing1, timing2) => {    
+const checkTiming = (timing1, timing2) => {    
     if( (timing1.start >= timing2.start && timing1.start < timing2.end) ||
         (timing1.end > timing2.start && timing1.end <= timing2.end) 
         || (timing2.start >= timing1.start && timing2.start < timing1.end) ||
@@ -34,21 +37,20 @@ const checkTime = (timing1, timing2) => {
 }
 
 const searchAvailableTiming = (classRomms, timing) => {
-    const classRoomAvailable = { indexClassRom: 0, available: true };
+    let available = false;
     for (let i = 0; i < classRomms.length; i++) {        
-        classRoomAvailable.indexClassRom = i;
-        classRoomAvailable.available = true;
+        available = true;
         for (let j = 0; j < classRomms[i].length; j++) {               
-            if(checkTime(timing, classRomms[i][j])){
-                classRoomAvailable.available = false;
+            if(checkTiming(timing, classRomms[i][j])){
+                available = false;
                 break;
             }
         }
-        if(classRoomAvailable.available){
-            break;
+        if(available){
+            return { available, indexClassRom: i };
         }
     }
-    return classRoomAvailable;
+    return { available };
 };
 
 const convertTime2Number = strTime => {
@@ -61,5 +63,11 @@ const getTimeInNumer = time => {
     const startTimeInNumber = new Date(now.getFullYear(), now.getMonth()+1, now.getDate(), hours, minutes);
     return startTimeInNumber.getTime();
 }
+
+const getTimmingInNumber = (timing) => {
+    const startTimeInNumber = getTimeInNumer(timing.start);
+    const endTimeInNumber = getTimeInNumer(timing.end);
+    return { start: startTimeInNumber, end: endTimeInNumber }; 
+};
 
 module.exports = findClassRoom;

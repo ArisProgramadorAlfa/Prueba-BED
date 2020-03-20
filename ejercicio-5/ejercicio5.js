@@ -10,9 +10,7 @@ const stringCheckingComplete = str => {
         if(s === '(' || s === '['){           
             arrayOfCouples.push(s)
         } else if(s === ')' || s === ']'){
-            if(arrayOfCouples.length === 0){
-                return false;
-            }            
+            if(arrayOfCouples.length === 0){ return false; }            
             const previousElement = arrayOfCouples[arrayOfCouples.length - 1];
             if(couples[previousElement] === s){                
                 arrayOfCouples.pop();

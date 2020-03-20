@@ -17,7 +17,7 @@ const getArrayOfNumbers = array => {
     }
 };
 
-const isNumber = n => typeof n === 'number';
+const isNumber = n => typeof n === 'number' && Number.isInteger(n) && n >= 0;
 const orderNumbersFilter = (a, b) => a - b;
 
 module.exports = {

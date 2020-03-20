@@ -11,7 +11,7 @@ un código que solucione el problema con el menor núumero de procesos pisibles,
 que decidi hacer este proceso en 3 partes:
 1. Crear un objeto con las llaves de los números que contiene el arreglo original y 
 cuando se repitan estos, el valor correspondiente a cada llave incrementara en uno.
-2. Obtener las llaves del objeto creado.
+2. Obtener las llaves del objeto creado, el arreglo de llaves que devuelve, ya esta ordenado.
 3. Convertir las llaves del objeto en enteros, ya que cuando se obtienen las llaves,
 estas son devueltas como string.
 Con esto solo necesitamos recorrer dos arreglos, el original y el final que contiene 

@@ -4,87 +4,88 @@ const getHigherNumber = require('./../ejercicio-3/ejercicio3');
 const clearArray = require('./../ejercicio-4/ejercicio4');
 const checkString = require('./../ejercicio-5/ejercicio5');
 const findClassRoom = require('./../ejercicio-6/ejercicio6');
+const data = require('./data');
+let assert = require('assert');
 
-// Ejercicio 1
-//const array = [3,2,5,9,1,3];
-// const array = [3,2,5,9,1,3,4,5,1];
-// const subArray = getSubArray(array);
-// if(subArray) {    
-//     console.log(subArray);
-// } else {
-//     console.log('El arreglo debe contener al menos un número entero.');    
-// }
+describe('Examen BED', () => {  
+  
+  describe('Ejercicio 1.', () => {
+    for (const test of data.ejercicio1) {
+      it(test.message, () => {
+        assert.deepEqual(getSubArray(test.param), test.result);
+      });      
+    }
+  });
 
-// Ejercicio 2
-// const n = 5, m = 9;
-// const suma = sumaEnSerie(n, m);
-// if(suma){ 
-//     console.log(`El resultado es: ${suma}`);        
-// } else {
-//     console.log('Los números deben ser enteros positivos y m debe ser igual o mayor a n.');    
-// }
+  describe('Ejercicio 2', () => {
+    it('Debe regresar una suma en serie desde n hasta m.', () => {
+        assert.equal(sumaEnSerie(5,9), 35);
+    });
+    it('Devuelve false si n o m no son números enteros positivos', () => {
+        assert.equal(sumaEnSerie(-1, 4.5), false);
+    });
+    it('Devuelve false si n es mayor que m', () => {
+        assert.equal(sumaEnSerie(10, 5), false);
+    });
+  });
 
-// Ejercicio 3
-// const array = [10, 5, 6, 8, 3];
-// const k = 5;
-// const heigherNumber = getHigherNumber(array, k);
-// if(heigherNumber){
-//     console.log(`El k-esimo número mas grande es: ${heigherNumber}`);    
-// } else {
-//     console.log('El arreglo debe contener al menos un número y k debe ser un entero mayor que cero y menor que la longitud del arreglo.');    
-// }
+  describe('Ejercicio 3', () => {
+    it('Debe mostrar el k-esimo número mas grande de un arreglo dado.', () => {
+        assert.equal(getHigherNumber([7,8,9,1,2,5,7,3], 2), 8);
+    });
+    it('Debe mostrar el k-esimo número mas grande de un arreglo dado.', () => {
+      assert.equal(getHigherNumber([7,8,9,1,2,5,7,3], 6), 3);
+    });
+    it('Debe regresar false si k es cero', () => {
+      assert.equal(getHigherNumber([7,8,9,1,2,5,7,3], 0), false);
+    });
+    it('Debe regresar false si k es mayor que la longitud del arreglo.', () => {
+      assert.equal(getHigherNumber([7,8,9,1,2,5,7,3], 0), false);
+    });
+    it('Debe regresar false si el arreglo esta vacio.', () => {
+      assert.equal(getHigherNumber([], 10), false);
+    });
+  });
 
-// Ejercicio 4
-// const array = [1, 2, 3, 1, 2, 3, 4];
-// const newArray = clearArray(array);
-// console.log(newArray);
+  describe('Ejercicio 4', () => {
+    for (const test of data.ejercicio4) {
+      it(test.message, () => {
+        assert.deepEqual(clearArray(test.param), test.result);
+      });      
+    }
+  });
 
-// Ejercicio 5
-// const str = "([]())";
-// const completeOk = checkString.stringCheckingComplete(str);
-// const simpleOk = checkString.stringCheckingSimple(str);
-// console.log(`Comprobación simple: ${simpleOk}`);
-// console.log(`Comprobación completa: ${completeOk}`);
+  describe('Ejercicio 5', () => {
+    describe('Función simple', () => {
+      it('Debe devolver true si la cadena de parentesis y corchetes esta bien balanceada', () => {
+        assert.equal(checkString.stringCheckingSimple("([])"), true);
+      });
+      it('Debe devolver false si la cadena de parentesis y corchetes no esta bien balanceada', () => {
+        assert.equal(checkString.stringCheckingSimple("([]())"), false);
+      });
+      it('Debe devolver false si la cadena de parentesis y corchetes no esta bien balanceada', () => {
+        assert.equal(checkString.stringCheckingSimple("([)]"), false);
+      });
+    });
+    describe('Función completa', () => {
+      it('Debe devolver true si la cadena de parentesis y corchetes esta bien balanceada.', () => {
+        assert.equal(checkString.stringCheckingComplete("([])"), true);
+      });
+      it('Debe devolver false si la cadena de parentesis y corchetes no esta bien balanceada', () => {
+        assert.equal(checkString.stringCheckingComplete("([]([]))"), true);
+      });
+      it('Debe devolver false si la cadena de parentesis y corchetes no esta bien balanceada', () => {
+        assert.equal(checkString.stringCheckingComplete("([(]))"), false);
+      });
+    });
+  });
 
-// Ejercicio 6
-// const classroomTiming = [
-//     {
-//         start: '1:00',
-//         end: '24:00'
-//     },
-//     {
-//         start: '11:00',
-//         end: '13:00'
-//     },
-//     {
-//         start: '13:00',
-//         end: '23:30'
-//     },
-//     {
-//         start: '0:30',
-//         end: '23:00'
-//     },
-// ];
-
-// const classrooms = findClassRoom(classroomTiming);
-// console.log(classrooms);
-// console.log(classrooms.length);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  describe('Ejercicio 6', ()=>{
+    for (const test of data.ejercicio6) {
+      it(test.message, () => {
+        assert.deepEqual(findClassRoom(test.param), test.result);
+      });      
+    }
+  });
+  
+});

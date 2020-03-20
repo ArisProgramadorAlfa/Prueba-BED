@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "nodemon test/test.js"
+    "start": "node inidex.js",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/ArisProgramadorAlfa/Prueba-BED#readme",
   "devDependencies": {
+    "mocha": "^7.1.1",
     "nodemon": "^2.0.2"
   }
 }
