@@ -1,6 +1,7 @@
 const getSubArray = require('./../ejercicio-1/ejercicio1');
 const sumaEnSerie = require('./../ejercicio-2/ejercicio2');
 const getHigherNumber = require('./../ejercicio-3/ejercicio3');
+const clearArray = require('./../ejercicio-4/ejercicio4');
 
 
 // Ejercicio 1
@@ -32,6 +33,11 @@ const getHigherNumber = require('./../ejercicio-3/ejercicio3');
 //     console.log('El arreglo debe contener al menos un número y k debe ser un entero mayor que cero y menor que la longitud del arreglo.');    
 // }
 
+// Ejercicio 4
+
+// const array = [1, 2, 3, 1, 2, 3, 4];
+// const newArray = clearArray(array);
+// console.log(newArray);
 
 
 
