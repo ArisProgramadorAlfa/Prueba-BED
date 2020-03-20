@@ -3,7 +3,7 @@ const sumaEnSerie = require('./../ejercicio-2/ejercicio2');
 const getHigherNumber = require('./../ejercicio-3/ejercicio3');
 const clearArray = require('./../ejercicio-4/ejercicio4');
 const checkString = require('./../ejercicio-5/ejercicio5');
-
+const findClassRoom = require('./../ejercicio-6/ejercicio6');
 
 // Ejercicio 1
 //const array = [3,2,5,9,1,3];
@@ -45,6 +45,35 @@ const checkString = require('./../ejercicio-5/ejercicio5');
 // const simpleOk = checkString.stringCheckingSimple(str);
 // console.log(`Comprobación simple: ${simpleOk}`);
 // console.log(`Comprobación completa: ${completeOk}`);
+
+// Ejercicio 6
+// const classroomTiming = [
+//     {
+//         start: '1:00',
+//         end: '24:00'
+//     },
+//     {
+//         start: '11:00',
+//         end: '13:00'
+//     },
+//     {
+//         start: '13:00',
+//         end: '23:30'
+//     },
+//     {
+//         start: '0:30',
+//         end: '23:00'
+//     },
+// ];
+
+// const classrooms = findClassRoom(classroomTiming);
+// console.log(classrooms);
+// console.log(classrooms.length);
+
+
+
+
+
 
 
 
