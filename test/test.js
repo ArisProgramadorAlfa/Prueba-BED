@@ -1,5 +1,6 @@
 const getSubArray = require('./../ejercicio-1/ejercicio1');
 const sumaEnSerie = require('./../ejercicio-2/ejercicio2');
+const getHigherNumber = require('./../ejercicio-3/ejercicio3');
 
 
 // Ejercicio 1
@@ -17,6 +18,18 @@ const sumaEnSerie = require('./../ejercicio-2/ejercicio2');
 // } else {
 //     console.log('Los números deben ser enteros positivos y m debe ser igual o mayor a n.');    
 // }
+
+// Ejercicio 3
+// const array = [10, 5, 6, 8, 3];
+// const k = 4;
+// const heigherNumber = getHigherNumber(array, k);
+// if(heigherNumber){
+//     console.log(`El k-esimo número mas grande es: ${heigherNumber}`);    
+// } else {
+//     console.log('El arreglo debe contener al menos un número y k debe ser un entero mayor que cero y menor que la longitud del arreglo.');    
+// }
+
+
 
 
 
