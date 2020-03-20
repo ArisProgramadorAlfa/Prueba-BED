@@ -1,9 +1,12 @@
+const utils = require('./../utils/utils');
 
-
-const getSubArray = (array) => {    
+const getSubArray = (array) => {
+    const arrayOnNumbers = utils.getArrayOfNumbers(array);
+    if(!arrayOnNumbers) { return false; }
+    if(arrayOnNumbers.length === 0) { return false; }
     let subArrayTemp = [];
     let newSubArray = [];
-    for (const iterator of array) {       
+    for (const iterator of arrayOnNumbers) {       
         subArrayTemp.push(iterator);        
         if(subArrayTemp.length > 1){            
             if(subArrayTemp[subArrayTemp.length - 1] <= subArrayTemp[subArrayTemp.length - 2]){

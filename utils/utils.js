@@ -1,4 +1,4 @@
-const isPoritiveInteger = n => {
+const isPositiveInteger = n => {
     const nIsNumber = typeof n === 'number';    
     if(!nIsNumber){ return false; }
     if(!Number.isInteger(n)){ return false; }
@@ -21,7 +21,7 @@ const isNumber = n => typeof n === 'number';
 const orderNumbersFilter = (a, b) => a - b;
 
 module.exports = {
-    isPoritiveInteger,
+    isPositiveInteger,
     getArrayOfNumbers,
     orderNumbersFilter
 };

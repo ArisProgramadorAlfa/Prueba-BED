@@ -1,4 +1,4 @@
-
+const utils = require('./../utils/utils');
 
 const sumaEnSerie = (n, m) =>{
     const varsIsOk = checkVars(n, m);
@@ -11,15 +11,9 @@ const sumaEnSerie = (n, m) =>{
 }
 
 const checkVars = (n, m) => {
-    const nIsNumber = typeof n === 'number';
-    const mIsNumber = typeof m === 'number';
-    if(!nIsNumber || !mIsNumber){ return false; }
-    if(!Number.isInteger(n) || !Number.isInteger(m)){ return false; }
-    if( n <= 0 || m <= 0 ){ return false; }
+    if(!utils.isPositiveInteger(n) || !utils.isPositiveInteger(m)) { return false; } 
     if(n > m){ return false; }
     return true;
 }
-
-
 
 module.exports = sumaEnSerie;
